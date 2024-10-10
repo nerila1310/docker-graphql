@@ -32,6 +32,8 @@ jobs:
     - name: Push Docker Image
       run: |
         docker push nerila1310/docker-graphql:0.0.1
+        docker push nerila1310/docker-graphql:latest
+        
 
 
 
