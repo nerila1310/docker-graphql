@@ -21,7 +21,7 @@ jobs:
     - name: Docker login
       env: # variables de entonrno
         DOCKER_USER: ${{ secrets.DOCKER_USER }} # Secret user
-        DOCKER_PASSWORD: ${{ secrets.DOKER_PASSWORD }} # Secret password
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }} # Secret password
       run: | # comandos a ejecutar
         echo "Iniciando login"
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
