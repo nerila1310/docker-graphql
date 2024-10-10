@@ -23,9 +23,21 @@ jobs:
         DOCKER_USER: ${{ secrets.DOCKER_USER }} # Secret user
         DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }} # Secret password
       run: | # comandos a ejecutar
-        echo "Iniciando login"
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
-        echo "Finalizando login"
+
+    - name: Build Docker Image
+      run: |
+        docker build -t nerila1310/docker-graphql:0.0.1 .
+
+    - name: Push Docker Image
+      run: |
+        docker push nerila1310/docker-graphql:0.0.1
+
+
+
+
+
+
         
-    # - name: Build the Docker image
-    #   run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+    #- name: Build the Docker image
+    #  run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
