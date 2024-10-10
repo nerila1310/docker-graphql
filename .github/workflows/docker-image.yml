@@ -22,10 +22,10 @@ jobs:
       env: # variables de entonrno
         DOCKER_USER: ${{ secrets.DOCKER_USER }} # Secret user
         DOCKER_PASSWORD: ${{ secrets.DOKER_PASSWORD }} # Secret password
-        run: | # comandos a ejecutar
-          echo "Iniciando login"
-          docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
-          echo "Finalizando login"
+      run: | # comandos a ejecutar
+        echo "Iniciando login"
+        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+        echo "Finalizando login"
         
     # - name: Build the Docker image
     #   run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
